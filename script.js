@@ -10,7 +10,7 @@ const title = document.getElementById("title");
 const cover = document.getElementById("cover");
 
 // Song titles
-const songs = ["hey", "summer", "ukulele"];
+const song = ["hey", "summer", "ukulele"];
 
 // Keep track of song
 let songIndex = 2;
@@ -24,3 +24,14 @@ function loadSong(song) {
   audio.src = `music/${song}.mp3`;
   cover.src = `images/${song}.jpg`;
 }
+
+// Event listener
+playBtn.addEventListener("click", () => {
+  const isPlaying = musicContainer.classList.contains("play");
+
+  if (isPlaying) {
+    pauseSong();
+  } else {
+    playSong();
+  }
+});
